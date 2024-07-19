@@ -7,14 +7,14 @@ $error_message = isset($_GET['msg']) ? $_GET['msg'] : '';
 ?>
 
    <section class="hero" id="hero" data-aos="fade-down">
-    <div class="container">
+    <div class="container d-flex justify-content-center">
         <form action="./scripts/funct.php" method="post">
             <div class="form-row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-12">
                     <label for="inputFullName">Full Name</label>
                     <input type="text" class="form-control" id="inputFullName" placeholder="Enter Your Full Name" name="fname" required>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-12">
                     <label for="inputUsername">Username</label>
                     <input type="text" class="form-control" id="inputUsername" placeholder="Enter Your Unique Username" name="username" required>
                 </div>
@@ -22,19 +22,19 @@ $error_message = isset($_GET['msg']) ? $_GET['msg'] : '';
                     <label for="inputEmail">Email</label>
                     <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email" required>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-12">
                     <label for="inputPassword">Password</label>
                     <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password" required>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-12">
                     <label for="inputConfirmPassword">Confirm Password</label>
                     <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirm Password" name="confirmPassword" required>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-12">
                     <label for="inputReferee">Referee</label>
                     <input type="text" class="form-control" id="inputReferee" placeholder="Enter Your Referee Code" name="referalCode">
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-12">
                     <label for="inputPackage">Package</label>
                     <select id="inputPackage" class="form-control" name="package" required>
                         <option selected>Choose...</option>
@@ -49,7 +49,7 @@ $error_message = isset($_GET['msg']) ? $_GET['msg'] : '';
                     <label class="form-check-label" for="inputTerms">I agree to the <a href="#">Terms and Conditions</a> of the investment</label>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary" name="register">Sign up</button>
+            <button type="submit" class="btn " style="background-color:#B2721C" name="register">Sign up</button>
             <small id="emailHelp" class="form-text text-muted">Already have an account? <a href="login.php">Login here</a>.</small>
             <?php if (!empty($error_message)) : ?>
                 <div class="alert alert-danger mt-3" role="alert">

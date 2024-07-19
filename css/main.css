@@ -73,6 +73,8 @@ header .container {
     display: flex;
 }
 
+
+
 .right-section a {
     color: white;
     border-radius: 50px;
@@ -88,6 +90,8 @@ header .container {
 }
 
 /* Hero section */
+
+
 #hero .container {
     padding-top: 7rem;
     padding-bottom: 5rem;

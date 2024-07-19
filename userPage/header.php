@@ -103,7 +103,7 @@ $profilePic;
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>fusion flexi</title>
+  <title>Capitamain</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -250,35 +250,7 @@ $profilePic;
             
             </ul>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link" style="color:rgb(0,31,30)">
-              <i class="nav-icon far fa-envelope"></i>
-              <p>
-                Mailbox
-                <i class="right text-warning">coming soon</i>
-              </p>
-            </a>
-            <!-- <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/mailbox/mailbox.html" disabled class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inbox</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/mailbox/compose.html" disabled class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Compose</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/mailbox/read-mail.html" disabled class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Read</p>
-                </a>
-              </li>
-            </ul> -->
-          </li>
+       
 
           <li class="nav-item">
               <a href="./logout.php" class="nav-link text-white ">

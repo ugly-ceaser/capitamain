@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "fusionfl_user";
+$username = "capitama_user";
 $password = "marti08139110216";
-$dbname = "fusionfl_data";
+$dbname = "capitama_data";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

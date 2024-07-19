@@ -18,16 +18,16 @@ $error_message = isset($_GET['msg']) ? $_GET['msg'] : '';
             </div>
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="inputRememberMe">
-                <label class="form-check-label" for="inputRememberMe">Remember Me</label>
+                <label class="form-check-label text-secondary" for="inputRememberMe" >Remember Me</label>
             </div>
-            <button type="submit" class="btn btn-success mt-3" name="login">Login</button>
+            <button type="submit" class="btn  mt-3" style="background-color:#B2721C;" name="login">Login</button>
             <br>
             <?php if (!empty($error_message)) : ?>
                 <div class="alert alert-danger mt-3" role="alert">
                     <?php echo htmlspecialchars($error_message); ?>
                 </div>
             <?php endif; ?>
-            <small id="emailHelp" class="form-text text-muted">Don't have an account? <a href="./Register.php">Register here</a>.</small>
+            <small id="emailHelp" class="form-text text-dark">Don't have an account? <a href="./Register.php">Register here</a>.</small>
         </form>
     </div>
 </section>

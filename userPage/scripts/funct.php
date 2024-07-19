@@ -2,9 +2,9 @@
 
 // // commented out te former database
 $servername = "localhost";
-$username = "fusionfl_user";
+$username = "capitama_user";
 $password = "marti08139110216";
-$dbname = "fusionfl_data";
+$dbname = "capitama_data";
 
 
 // Create connection

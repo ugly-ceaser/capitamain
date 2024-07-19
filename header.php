@@ -5,7 +5,7 @@
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fusion flexi</title>
+    <title>Capitamain</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="./img/logo.jpg">
 
@@ -22,8 +22,27 @@
 
     <style>
         nav{
-        background-image:linear-gradient(to bottom,#fff, #001f1e);
-        color:white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: transparent;
+            transition: background 0.3s, backdrop-filter 0.3s;
+            z-index: 1000;
+       
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        
+
+        .nav-link, .navbar-brand{
+            color: #001f1e !important;
+            font-weight:bolder;
         }
 
         .str {
@@ -35,6 +54,24 @@
         background-color: rgb(0,31,30) !important;
 
     }
+
+    section.hero{
+        background-image:url('./img/Hero2.jpg') !important;
+        background-size:cover;
+        background-position:center;
+        background-repeat:no-repeat;
+        height: 90vh;
+    }
+
+
+    @media (max-width: 500px) {
+        nav {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+    
+    }
     </style>
 </head>
 
@@ -43,9 +80,9 @@
 
 
     <nav  class="navbar navbar-expand-lg navbar-light text-light fixed-top p-2"   >
-        <a class="navbar-brand text-light">
-            <img src="./img/logo.jpg" alt="blockchain" class="nav-logo" width="50" height="50" style="border-radius:50%;">
-            fusion flexi
+        <a class="navbar-brand text-light" style="margin-right:100px;">
+            
+            Capitamain
         </a>
         <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -66,8 +103,8 @@
                     <a class="nav-link text-light" href="./login.php" tabindex="-1" aria-disabled="true">Login</a>
                 </li>
 
-                <li class="nav-item mx-5" style="position:absolute; right: 70px;">
-                    <a class="nav-link text-light" href="./Register.php" tabindex="-1" aria-disabled="true">Register</a>
+                <li class=" nav-item mx-5" style="position:absolute; right: 70px;">
+                    <a class=" nav-link text-light" href="./Register.php" tabindex="-1" aria-disabled="true">Register</a>
                 </li>
           
             </ul>

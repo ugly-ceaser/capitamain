@@ -4,10 +4,10 @@
         <div class="container">
             <div class="footer-contents" data-aos="fade-down">
                 <div class="top-head d-flex align-items-center justify-content-start gx-3">
-                    <img src="./img/logo.jpg" alt="" width="30">
-                    <h5 class="my-2 mx-2 mb-2">fusion flexi</h5>
+                    
+                    <h5 class="my-2 mx-2 mb-2">Capitamain</h5>
                 </div>
-                <p class="mt-3"><i class="fa fa-copyright"></i> 2021 fusion flexi<br>Grow Your Wealth with Confidence</p>
+                <p class="mt-3"><i class="fa fa-copyright"></i> 2021 Capitamain<br>Grow Your Wealth with Confidence</p>
             </div>
             <div class="footer-contents" data-aos="fade-down">
                 <h5 class="mb-3" style="color:#fff; font-weigth:bolder;">Packages</h5>
@@ -24,14 +24,14 @@
                 <p><a href="./login.php" class="footer-link text-light">Login</a></p>
             </div>
             <div class="footer-contents" data-aos="fade-down">
-                <h5 class="mb-3" text-light>Learn</h5>
+            <h5 class="mb-3" style="color:#fff; font-weigth:bolder;">Learn</h5>
                 <p><a href="#" class="footer-link text-light">What is bitcoin</a></p>
                 <p><a href="#" class="footer-link text-light">What is Etherum</a></p>
                 <p><a href="#" class="footer-link text-light">Getting Started</a></p>
                 <p><a href="#" class="footer-link text-light">Blog</a></p>
             </div>
             <div class="footer-contents" data-aos="fade-down">
-                <h5 class="mb-3">Company</h5>
+            <h5 class="mb-3" style="color:#fff; font-weigth:bolder;">Company</h5>
                 <p><a href="#" class="footer-link text-light">About Us</a></p>
                 <p><a href="#" class="footer-link text-light">Contacts</a></p>
                 <p><a href="#" class="footer-link text-light">Terms</a></p>
@@ -72,7 +72,7 @@
     <script src="js/app.js"></script>
 
     <script>
-            document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
   var sendButton = document.getElementById('sendButton');
   var contactForm = document.getElementById('contactForm');
 
@@ -101,6 +101,15 @@
 
     xhr.send(formData);
   });
+});
+
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) { // Adjust the scroll threshold as needed
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
 });
 
     </script>

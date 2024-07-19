@@ -1,4 +1,4 @@
 <?php
-    $companyName = "fusion flexi";
+    $companyName = "Capitamain";
 
 ?>

@@ -1,9 +1,9 @@
 <?php
 // Database connection settings
 $servername = "localhost";
-$username = "fusionfl_user";
+$username = "capitama_user";
 $password = "marti08139110216";
-$dbname = "fusionfl_data";
+$dbname = "capitama_data";
 
 // Create a new PDO instance
 try {
