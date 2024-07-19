@@ -1,0 +1,4 @@
+<?php
+    $companyName = "fusion flexi";
+
+?>

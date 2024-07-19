@@ -1,0 +1,2 @@
+
+[14-Jul-2024 07:43:56 UTC] PHP Fatal error:  Cannot redeclare redirectWithMessage() (previously declared in /home/fusionfl/public_html/admin_profile/handler/user_handler.php:43) in /home/fusionfl/public_html/admin_profile/handler/user_handler.php on line 189
