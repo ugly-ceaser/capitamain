@@ -32,7 +32,7 @@ if (isset($_POST['accountUpdate'])) {
         $filename = $_FILES["barcode"]["name"];
         $filetype = $_FILES["barcode"]["type"];
         $filesize = $_FILES["barcode"]["size"];
-        $ext = pathinfo($filename, PATHINFO_EXTENSION);
+        $ext = pathinfo($filename, PATHINFO_EXTENSION); #chill
 
         if (!array_key_exists($ext, $allowed)) {
             header("Location: ../dashboard.php?msg=Invalid file format");
