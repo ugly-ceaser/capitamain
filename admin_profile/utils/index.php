@@ -107,6 +107,8 @@ function pendingTransact($conn, $tableName) {
     return $stmt->fetchAll();
 }
 
+//chilling
+
 // Function to get all transactions (general)
 function allTransact($conn) {
     $query = "SELECT * FROM GeneralAccount";
