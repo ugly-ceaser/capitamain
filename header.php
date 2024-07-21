@@ -56,7 +56,7 @@
     }
 
     section.hero{
-        background-image:url('./img/Hero2.jpg') !important;
+        background-image:url('./img/hero2.jpg') !important;
         background-size:cover;
         background-position:center;
         background-repeat:no-repeat;

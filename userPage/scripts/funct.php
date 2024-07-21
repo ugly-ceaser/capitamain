@@ -358,7 +358,7 @@ if (isset($_POST['withdraw']))
 
             </head>
             <body>
-            <img src='https://CapitalFlex.com/userPage/dist/img/logo.png' alt='capital World Profits'>
+            <img src='https://Capitamain.com/userPage/dist/img/logo.png' alt='capital World Profits'>
             <br>
             <h1>Hello $name</h1>
 
@@ -368,7 +368,7 @@ if (isset($_POST['withdraw']))
             <br>
 
             <h4> Thank you</h4>
-            <small>Contact Us at support@CapitalFlex.com</small>
+            <small>Contact Us at support@Capitamain.com</small>
 
                 </body>
                 </html>
@@ -718,10 +718,10 @@ if (isset($_POST['invest'])) {
 
     // Plan-specific minimum amounts
     $minAmounts = [
-        "basic" => 50,
-        "standard" => 1000,
-        "pro" => 10000,
-        "advance" => 100000
+        "basic" => 1999,
+        "standard" => 4999,
+        "pro" => 9999,
+        "advance" => 999999
         
     ];
 

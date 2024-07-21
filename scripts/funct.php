@@ -83,13 +83,13 @@ if (isset($_POST["register"])) {
             <title>fusion flexi</title>
             </head>
             <body>
-            <img src='https://fusionflexi.com/userPage/dist/img/logo.png' alt='fusion flexi Logo Image'><br>
+            <img src='https://capitamain.com/userPage/dist/img/logo.png' alt='fusion flexi Logo Image'><br>
             <p>Your registration with fusion flexi has been successfully completed.</p>
             <p>Please log in with the following credentials:</p>
             <p>Username: $username</p>
             <p>Password: (Your chosen password)</p>
             <h4>Thank you</h4>
-            <small>Contact Us at support@fusionflexi.com</small>
+            <small>Contact Us at support@capitamain.com</small>
             </body>
             </html>";
         

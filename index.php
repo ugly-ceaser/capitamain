@@ -43,7 +43,7 @@ include 'header.php';
             <div class="cont col-lg-5 col-md-5 col-sm-12 m-3 rounded-5" data-aos="fade-up">
               
                 <h3 style="text-align:center; color:rgb(0,31,30)">Basic Package</h3>
-                <p>Minimum Deposit: $50</p>
+                <p>Minimum Deposit: $2000</p>
                 <p>30% IN 5 DAYS</p>
                 <p>Weekly Withdrawal</p>
                 <p>2% refree initial Deposit</p>
@@ -52,7 +52,7 @@ include 'header.php';
             <div class="cont col-lg-5 col-md-5 col-sm-12 m-3 rounded-5" data-aos="fade-up">
                
                 <h3 style="text-align:center; color:rgb(0,31,30)">Standard Package</h3>
-                <p>Minimum Deposit: $1000</p>
+                <p>Minimum Deposit: $5000</p>
                 <p>40% IN 5 DAYS</p>
                 <p>Weekly Withdrawal</p>
                 <p>5% refree initial Deposit</p>
