@@ -23,6 +23,9 @@ if (!function_exists('test_input')) {
 
 if (isset($_POST['accountUpdate'])) {
     $coin = test_input($_POST["coin"]);
+
+    var_dump($coin);
+    die();
     $address = test_input($_POST['walletAddress']);
     $name = test_input($_POST["walletName"]);
 
