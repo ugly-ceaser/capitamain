@@ -76,113 +76,6 @@ if(!isset($_SESSION["Admin"])) header("Location: ./index.php");
         </nav>
 
         <div class="container-fluid">
-
-
-        <div class="modal fade" id="AdminDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Admin Details</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form class="form-inline" action="./utils/index.php" method="post">
-                        <div class="form-group mb-2">
-                            <label for="staticEmail2" class="sr-only">Username</label>
-                            <input type="text" name="username" class="form-control" id="staticEmail2"
-                                value="email@example.com">
-                        </div>
-                        <div class="form-group mx-sm-3 mb-2">
-                            <label for="inputPassword2" class="sr-only">Password</label>
-                            <input type="password" name="password" class="form-control" id="inputPassword2"
-                                placeholder="Password">
-                        </div>
-                        <button type="submit" name="detailUpdate" class="btn btn-primary mb-2">Update </button>
-                    </form>
-                </div>
-
-            </div>
-
-            <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">Admin Account</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body col-12">
-                        <form action="./utils/index.php" method="post" enctype="multipart/form-data">
-                            <div class="form-group row">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="WALLET NAME"
-                                        name="walletName">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputPassword3" class="col-sm-2 col-form-label">Address</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputPassword3" placeholder="wallet Address"
-                                        name="walletAddress">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="inputPassword3" class="col-sm-2 col-form-label">Barcode</label>
-                                <div class="col-sm-10">
-                                    <input type="file" class="form-control" id="inputPassword3" placeholder="Wallet Barcode"
-                                        name="barcode">
-                                </div>
-                            </div>
-                            <fieldset class="form-group">
-                                <div class="row">
-                                    <legend class="col-form-label col-sm-2 pt-0">Coin</legend>
-                                    <div class="col-sm-10">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="coin" id="gridRadios1"
-                                                value="usdt">
-                                            <label class="form-check-label" for="gridRadios1">
-                                                Usdt Address
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="coin" id="gridRadios2"
-                                                value="eth">
-                                            <label class="form-check-label" for="gridRadios2">
-                                                Etherum Address
-                                            </label>
-                                        </div>
-                                        <div class="form-check disabled">
-                                            <input class="form-check-input" type="radio" name="coin" id="gridRadios3"
-                                                value="btc">
-                                            <label class="form-check-label" for="gridRadios3">
-                                                Btc Address
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-                            <div class="form-group row">
-                                <div class="col-sm-10">
-                                    <button type="submit" name="accountUpdate" class="btn btn-primary">Update</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-
-                </div>
-        </div>
-
-
-        <div class="modal fade" id="AdminAccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-           
-            </div>
-            
-        </div>
              <!-- Display feedback messages -->
         <?php
         if (isset($_GET['msg'])) {
@@ -796,7 +689,110 @@ if(!isset($_SESSION["Admin"])) header("Location: ./index.php");
 
 
 
-      
+        <div class="modal fade" id="AdminDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Admin Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-inline" action="./utils/index.php" method="post">
+                        <div class="form-group mb-2">
+                            <label for="staticEmail2" class="sr-only">Username</label>
+                            <input type="text" name="username" class="form-control" id="staticEmail2"
+                                value="email@example.com">
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="inputPassword2" class="sr-only">Password</label>
+                            <input type="password" name="password" class="form-control" id="inputPassword2"
+                                placeholder="Password">
+                        </div>
+                        <button type="submit" name="detailUpdate" class="btn btn-primary mb-2">Update </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="AdminAccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Admin Account</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body col-12">
+                        <form action="./utils/index.php" method="post" enctype="multipart/form-data">
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="WALLET NAME"
+                                        name="walletName">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">Address</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputPassword3" placeholder="wallet Address"
+                                        name="walletAddress">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">Barcode</label>
+                                <div class="col-sm-10">
+                                    <input type="file" class="form-control" id="inputPassword3" placeholder="Wallet Barcode"
+                                        name="barcode">
+                                </div>
+                            </div>
+                            <fieldset class="form-group">
+                                <div class="row">
+                                    <legend class="col-form-label col-sm-2 pt-0">Coin</legend>
+                                    <div class="col-sm-10">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="coin" id="gridRadios1"
+                                                value="usdt">
+                                            <label class="form-check-label" for="gridRadios1">
+                                                Usdt Address
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="coin" id="gridRadios2"
+                                                value="eth">
+                                            <label class="form-check-label" for="gridRadios2">
+                                                Etherum Address
+                                            </label>
+                                        </div>
+                                        <div class="form-check disabled">
+                                            <input class="form-check-input" type="radio" name="coin" id="gridRadios3"
+                                                value="btc">
+                                            <label class="form-check-label" for="gridRadios3">
+                                                Btc Address
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div class="form-group row">
+                                <div class="col-sm-10">
+                                    <button type="submit" name="accountUpdate" class="btn btn-primary">Update</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
     </div>
 </div>    
 
