@@ -18,6 +18,16 @@ $email = $_SESSION['email'];
 
 $totalDeposit = get_total($conn, "deposit", "approved");
 
+$accountDetails = getAdminDetails($conn);
+
+// Fetching all details
+$usdtImg = $accountDetails['usdtImg'];
+$usdtAddress = $accountDetails['usdtAddress'];
+$btcImg = $accountDetails['btcImg'];
+$btcAddress = $accountDetails['btcAddress'];
+$ethImg = $accountDetails['ethImg'];
+$ethAddress = $accountDetails['ethAddress'];
+
 
 
 

@@ -55,30 +55,30 @@ if (isset($_GET['amount'])) {
                       </div>
                           <div class="col-md-12 col-lg-4 card">
                             <h4 style="color:black; font-weight:bolder">BTC </h4>
-                            <img src="../admin_profile/utils/uploads/btc.jpg" class="img-thumbnail" alt="BTC" style="width:200px;">
+                            <img src="../admin_profile/utils/uploads/<?= $btcImg?>" class="img-thumbnail" alt="BTC" style="width:200px;">
                           
                             <div class="form-group">
                                 <label class="form-label">Copy Address</label>
-                                <input type="text" class="form-control" value="bc1qwl5wjw4lxcpdrlcggqegj0wwq67vqgqczftghy" disabled  title="Double Tap to copy the address">
+                                <input type="text" class="form-control" value="<?= $btcAddress?>" disabled  title="Double Tap to copy the address">
                             </div>
                           </div>  
                                         
                           <div class="col-md-12 col-lg-4 ">
                               <h4 style="color:black; font-weight:bolder">USDT </h4>
-                            <img src="../admin_profile/utils/uploads/usdt.jpg" class="card-img-top" alt="USDT" style="width:200px;">
+                            <img src="../admin_profile/utils/uploads/<?= $usdtImg?>" class="card-img-top" alt="USDT" style="width:200px;">
                             
                             <div class="form-group">
                             <label class="form-label">Copy Address</label>
-                            <input type="text" class="form-control" value="TE6t5Mzt9cWbETc9WcGeVChTs1PpgvUM7t" disabled  title="Double Tap to copy the address">
+                            <input type="text" class="form-control" value="<?= $usdtAddress?>" disabled  title="Double Tap to copy the address">
                             </div>
                           </div>
 
                         <div class="col-md-12 col-lg-4 " id="deposit">
                               <h4 style="color:black; font-weight:bolder">ETH </h4>
-                          <img src="../admin_profile/utils/uploads/eth.jpg" class="card-img-top" alt="ETH" style="width:200px;">
+                          <img src="../admin_profile/utils/uploads/<?= $ethImg?>" class="card-img-top" alt="ETH" style="width:200px;">
                           <div class="form-group">
                             <label class="form-label">Copy Address</label>
-                            <input type="text" class="form-control" value="0xd0f5b5E55C376acACaedD04486dB8AFc6Ba1977A" disabled  title="Double Tap to copy the address">
+                            <input type="text" class="form-control" value="<?= $btcAddress?>" disabled  title="Double Tap to copy the address">
                             </div>
                       </div>
 

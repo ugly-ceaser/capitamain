@@ -95,6 +95,38 @@ function getDetails($userTable, $conn,$email)
     return $row;
 }
 
+
+function getAdminDetails($conn) {
+    $sql = "SELECT * FROM `admin` WHERE `id` = '1'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+
+        $data = [
+            "usdtImg" => $row['usdtImg'] ?? 'No USDT image found',
+            "usdtAddress" => $row['usdtAddress'] ?? 'No USDT address found',
+            "btcImg" => $row['btcImg'] ?? 'No BTC image found',
+            "btcAddress" => $row['btcAddress'] ?? 'No BTC address found',
+            "ethImg" => $row['ethImg'] ?? 'No ETH image found',
+            "ethAddress" => $row['ethAddress'] ?? 'No ETH address found'
+        ];
+    } else {
+        // Return default values when no record is found
+        $data = [
+            "usdtImg" => 'No USDT image found',
+            "usdtAddress" => 'No USDT address found',
+            "btcImg" => 'No BTC image found',
+            "btcAddress" => 'No BTC address found',
+            "ethImg" => 'No ETH image found',
+            "ethAddress" => 'No ETH address found'
+        ];
+    }
+
+    return $data;
+}
+
+
 function get_total($conn, $transaction_type, $status)
 {
     // Start session if not already started
