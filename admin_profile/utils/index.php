@@ -63,37 +63,43 @@ if (isset($_POST['accountUpdate'])) {
             exit;
         } else {
             // Move the uploaded file to the uploads directory
-            move_uploaded_file($_FILES["barcode"]["tmp_name"], "./uploads/" . $filename);
+            if (move_uploaded_file($_FILES["barcode"]["tmp_name"], "./uploads/" . $filename)) {
+                // Build the SQL query
+                $sql = "UPDATE `admin` SET ";
+                if ($coin == "btc") {
+                    $sql .= "`btcAddress` = :address, `btcImg` = :filename";
+                } elseif ($coin == "eth") {
+                    $sql .= "`ethAddress` = :address, `ethImg` = :filename";
+                } elseif ($coin == "usdt") {
+                    $sql .= "`usdtAddress` = :address, `usdtImg` = :filename";
+                }
+                $sql .= " WHERE `id` = :id";
 
-            // Build the SQL query
-            $sql = "UPDATE `admin` SET ";
-            if ($coin == "btc") {
-                $sql .= "`btcAddress` = :address, `btcImg` = :filename";
-            } elseif ($coin == "eth") {
-                $sql .= "`ethAddress` = :address, `ethImg` = :filename";
-            } elseif ($coin == "usdt") {
-                $sql .= "`usdtAddress` = :address, `usdtImg` = :filename";
-            }
-            $sql .= " WHERE `id` = :id";
+                // Prepare and execute the statement
+                $stmt = $conn->prepare($sql);
+                $stmt->bindParam(':address', $address);
+                $stmt->bindParam(':filename', $filename);
+                $stmt->bindParam(':id', $_SESSION['user_id']); // Assuming you have a session variable for the user ID
 
-            // Prepare and execute the statement
-            $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':address', $address);
-            $stmt->bindParam(':filename', $filename);
-            $stmt->bindParam(':id', $_SESSION['user_id']); // Assuming you have a session variable for the user ID
-
-            if ($stmt->execute()) {
-                header('Location: ../dashboard.php?suc=Update successful');
+                if ($stmt->execute()) {
+                    header('Location: ../dashboard.php?suc=Update successful');
+                } else {
+                    // Output error info for debugging
+                    $errorInfo = $stmt->errorInfo();
+                    header("Location: ../dashboard.php?msg=Update failed: " . $errorInfo[2]);
+                }
+                exit;
             } else {
-                header('Location: ../dashboard.php?msg=Update failed');
+                header("Location: ../dashboard.php?msg=Failed to move uploaded file");
+                exit;
             }
-            exit;
         }
     } else {
         header("Location: ../dashboard.php?msg=File upload error");
         exit;
     }
 }
+
 
 
 
