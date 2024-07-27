@@ -21,59 +21,72 @@ if (!function_exists('test_input')) {
     }
 }
 
-// Handle account updates
 if (isset($_POST['accountUpdate'])) {
     $coin = test_input($_POST["coin"]);
     $address = test_input($_POST['walletAddress']);
     $name = test_input($_POST["walletName"]);
 
     if (isset($_FILES["barcode"]) && $_FILES["barcode"]["error"] == 0) {
-        $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png");
+        // Define allowed MIME types
+        $allowed = array(
+            "image/jpg",
+            "image/jpeg",
+            "image/gif",
+            "image/png",
+            "image/bmp",
+            "image/webp",
+            "image/svg+xml",
+            "image/tiff",
+            "image/vnd.microsoft.icon",
+            "image/avif"
+        );
+
         $filename = $_FILES["barcode"]["name"];
         $filetype = $_FILES["barcode"]["type"];
         $filesize = $_FILES["barcode"]["size"];
-        $ext = pathinfo($filename, PATHINFO_EXTENSION); #chill
 
-        if (!array_key_exists($ext, $allowed)) {
+        // Verify MIME type
+        if (!in_array($filetype, $allowed)) {
             header("Location: ../dashboard.php?msg=Invalid file format");
             exit;
         }
 
-        if ($filesize > 5 * 1024 * 1024) {
+        // Verify file size
+        if ($filesize > 5 * 1024 * 1024) { // 5MB limit
             header("Location: ../dashboard.php?msg=File size exceeds limit");
             exit;
         }
 
-        if (in_array($filetype, $allowed)) {
-            if (file_exists("./uploads/" . $filename)) {
-                header("Location: ../dashboard.php?msg=File already exists");
-                exit;
-            } else {
-                move_uploaded_file($_FILES["barcode"]["tmp_name"], "./uploads/" . $filename);
-                $sql = "UPDATE `admin` SET ";
-                if ($coin == "btc") {
-                    $sql .= "`btcAddress` = :address, `btcImg` = :filename";
-                } elseif ($coin == "eth") {
-                    $sql .= "`ethAddress` = :address, `ethImg` = :filename";
-                } elseif ($coin == "usdt") {
-                    $sql .= "`usdtAddress` = :address, `usdtImg` = :filename";
-                }
-                $sql .= " WHERE `id` = :id";
-
-                $stmt = $conn->prepare($sql);
-                $stmt->bindParam(':address', $address);
-                $stmt->bindParam(':filename', $filename);
-                $stmt->bindParam(':id', $_SESSION['user_id']); // Assuming you have a session variable for the user ID
-
-                if ($stmt->execute()) {
-                    header('Location: ../dashboard.php?suc=Update successful');
-                } else {
-                    header('Location: ../dashboard.php?msg=Update failed');
-                }
-                exit;
-            }
+        // Check if the file already exists
+        if (file_exists("./uploads/" . $filename)) {
+            header("Location: ../dashboard.php?msg=File already exists");
+            exit;
         } else {
-            header("Location: ../dashboard.php?msg=Failed to upload file");
+            // Move the uploaded file to the uploads directory
+            move_uploaded_file($_FILES["barcode"]["tmp_name"], "./uploads/" . $filename);
+
+            // Build the SQL query
+            $sql = "UPDATE `admin` SET ";
+            if ($coin == "btc") {
+                $sql .= "`btcAddress` = :address, `btcImg` = :filename";
+            } elseif ($coin == "eth") {
+                $sql .= "`ethAddress` = :address, `ethImg` = :filename";
+            } elseif ($coin == "usdt") {
+                $sql .= "`usdtAddress` = :address, `usdtImg` = :filename";
+            }
+            $sql .= " WHERE `id` = :id";
+
+            // Prepare and execute the statement
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':address', $address);
+            $stmt->bindParam(':filename', $filename);
+            $stmt->bindParam(':id', $_SESSION['user_id']); // Assuming you have a session variable for the user ID
+
+            if ($stmt->execute()) {
+                header('Location: ../dashboard.php?suc=Update successful');
+            } else {
+                header('Location: ../dashboard.php?msg=Update failed');
+            }
             exit;
         }
     } else {
