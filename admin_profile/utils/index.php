@@ -75,11 +75,13 @@ if (isset($_POST['accountUpdate'])) {
                 }
                 $sql .= " WHERE `id` = :id";
 
+                $id = '1';
+
                 // Prepare and execute the statement
                 $stmt = $conn->prepare($sql);
                 $stmt->bindParam(':address', $address);
                 $stmt->bindParam(':filename', $filename);
-                $stmt->bindParam(':id', '1'); // Assuming you have a session variable for the user ID
+                $stmt->bindParam(':id', $id); // Assuming you have a session variable for the user ID
 
                 if ($stmt->execute()) {
                     header('Location: ../dashboard.php?suc=Update successful');
