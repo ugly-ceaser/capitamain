@@ -23,9 +23,6 @@ if (!function_exists('test_input')) {
 
 if (isset($_POST['accountUpdate'])) {
     $coin = test_input($_POST["coin"]);
-
-    var_dump($coin);
-    die();
     $address = test_input($_POST['walletAddress']);
     $name = test_input($_POST["walletName"]);
 
@@ -82,7 +79,7 @@ if (isset($_POST['accountUpdate'])) {
                 $stmt = $conn->prepare($sql);
                 $stmt->bindParam(':address', $address);
                 $stmt->bindParam(':filename', $filename);
-                $stmt->bindParam(':id', $_SESSION['user_id']); // Assuming you have a session variable for the user ID
+                $stmt->bindParam(':id', '1'); // Assuming you have a session variable for the user ID
 
                 if ($stmt->execute()) {
                     header('Location: ../dashboard.php?suc=Update successful');
