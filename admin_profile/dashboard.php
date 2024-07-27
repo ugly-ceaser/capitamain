@@ -66,8 +66,7 @@ if(!isset($_SESSION["Admin"])) header("Location: ./index.php");
                     <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#AdminDetails">Admin
                         Details</a>
-                    <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#AdminAccount">Admin
-                        Account</a>
+                 
 
                         <a class="nav-item nav-link" href="./logout.php">Log out</a>
 
