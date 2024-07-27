@@ -95,6 +95,8 @@ if (isset($_POST['accountUpdate'])) {
     }
 }
 
+
+
 // Function to get all users
 function getUsers($conn) {
     $query = "SELECT * FROM users";

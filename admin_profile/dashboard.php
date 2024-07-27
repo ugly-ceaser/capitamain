@@ -723,64 +723,57 @@ if(!isset($_SESSION["Admin"])) header("Location: ./index.php");
                         </button>
                     </div>
                     <div class="modal-body col-12">
-                        <form action="./utils/index.php" method="post" enctype="multipart/form-data">
-                            <div class="form-group row">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="WALLET NAME"
-                                        name="walletName">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputPassword3" class="col-sm-2 col-form-label">Address</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputPassword3" placeholder="wallet Address"
-                                        name="walletAddress">
-                                </div>
-                            </div>
+                    <form action="./utils/index.php" method="post" enctype="multipart/form-data">
+    <div class="form-group row">
+        <label for="walletName" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="walletName" placeholder="WALLET NAME" name="walletName">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="walletAddress" class="col-sm-2 col-form-label">Address</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="walletAddress" placeholder="wallet Address" name="walletAddress">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="barcode" class="col-sm-2 col-form-label">Barcode</label>
+        <div class="col-sm-10">
+            <input type="file" class="form-control" id="barcode" name="barcode">
+        </div>
+    </div>
+    <fieldset class="form-group">
+        <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">Coin</legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="coin" id="gridRadios1" value="usdt">
+                    <label class="form-check-label" for="gridRadios1">
+                        Usdt Address
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="coin" id="gridRadios2" value="eth">
+                    <label class="form-check-label" for="gridRadios2">
+                        Etherum Address
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="coin" id="gridRadios3" value="btc">
+                    <label class="form-check-label" for="gridRadios3">
+                        Btc Address
+                    </label>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" name="accountUpdate" class="btn btn-primary">Update</button>
+        </div>
+    </div>
+</form>
 
-                            <div class="form-group row">
-                                <label for="inputPassword3" class="col-sm-2 col-form-label">Barcode</label>
-                                <div class="col-sm-10">
-                                    <input type="file" class="form-control" id="inputPassword3" placeholder="Wallet Barcode"
-                                        name="barcode">
-                                </div>
-                            </div>
-                            <fieldset class="form-group">
-                                <div class="row">
-                                    <legend class="col-form-label col-sm-2 pt-0">Coin</legend>
-                                    <div class="col-sm-10">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="coin" id="gridRadios1"
-                                                value="usdt">
-                                            <label class="form-check-label" for="gridRadios1">
-                                                Usdt Address
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="coin" id="gridRadios2"
-                                                value="eth">
-                                            <label class="form-check-label" for="gridRadios2">
-                                                Etherum Address
-                                            </label>
-                                        </div>
-                                        <div class="form-check disabled">
-                                            <input class="form-check-input" type="radio" name="coin" id="gridRadios3"
-                                                value="btc">
-                                            <label class="form-check-label" for="gridRadios3">
-                                                Btc Address
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
-
-                            <div class="form-group row">
-                                <div class="col-sm-10">
-                                    <button type="submit" name="accountUpdate" class="btn btn-primary">Update</button>
-                                </div>
-                            </div>
-                        </form>
                     </div>
 
                 </div>
