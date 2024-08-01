@@ -187,8 +187,7 @@ if (isset($_POST['userProfit'])) {
     $details = getDetailsByEmail("users", $conn, $email);
 
     var_dump($details);
-    echo("hello 3");
-    die();
+  
     
     $profit = floatval($details["profit"]) + $amount;
     
