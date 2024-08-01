@@ -275,7 +275,7 @@ if (isset($_POST['userProfit'])) {
 
     $details = getDetailsByEmail("users", $conn, $email);
 
-    var_dump($details);
+    
     echo("<br>");
 
    
