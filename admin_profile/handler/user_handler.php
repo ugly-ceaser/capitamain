@@ -62,7 +62,7 @@ if (isset($_POST['update'])) {
 }
 
 // Update profit
-if (isset($_POST['profit'])) {
+if (isset($_POST['add_profit'])) {
     $id = $_POST['profit'];
     $initialAmount = floatval($_POST['pro']);
     $newAmount = floatval($_POST['amount']);
@@ -196,7 +196,7 @@ if (isset($_POST['depositUser'])) {
 
 
 // Add profit
-if (isset($_POST['add_profit'])) {
+if (isset($_POST['profit'])) {
     $amount = floatval($_POST['amount']);
     $email = $_POST['email'];
 
