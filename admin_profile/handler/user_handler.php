@@ -286,7 +286,7 @@ if (isset($_POST['userProfit'])) {
     $id = $details['id'];
 
     echo($id);
-    die();
+
     
     
 
