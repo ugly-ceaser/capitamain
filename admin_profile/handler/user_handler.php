@@ -24,22 +24,46 @@ function getDetails($userTable, $conn, $id)
 
 function getDetailsByEmail($userTable, $conn, $email)
 {
+    // Prepare the SQL query with a placeholder for the email
     $sql = "SELECT * FROM `$userTable` WHERE `email` = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    
-    
 
+    if ($stmt === false) {
+        die('Prepare failed: ' . $conn->error);
+    }
+
+    // Bind the email parameter as a string (s)
+    $stmt->bind_param("s", $email);
+
+    // Execute the prepared statement
+    if (!$stmt->execute()) {
+        die('Execute failed: ' . $stmt->error);
+    }
+
+    // Get the result of the query
+    $result = $stmt->get_result();
+
+    if ($result === false) {
+        die('Get result failed: ' . $stmt->error);
+    }
+
+    // Fetch the associative array from the result
     $data = $result->fetch_assoc();
-    
-    
-    
+
+    // Free the result and close the statement
+    $result->free();
+    $stmt->close();
+
+    // Return the fetched data
     return $data;
 }
 
 
+// Function to redirect with a message
+function redirectWithMessage($location, $message, $type = 'msg') {
+    header("Location: $location?$type=" . urlencode($message));
+    exit();
+}
 
 // Update available balance
 if (isset($_POST['update'])) {
@@ -170,6 +194,72 @@ if (isset($_POST['depositUser'])) {
 }
 
 
+function deleteUserAndTransactions($conn, $email)
+{
+    // Start a transaction
+    $conn->begin_transaction();
+
+    try {
+        // Delete the user from the users table
+        $deleteUserSql = "DELETE FROM `users` WHERE `email` = ?";
+        $deleteUserStmt = $conn->prepare($deleteUserSql);
+        $deleteUserStmt->bind_param("s", $email);
+        $deleteUserStmt->execute();
+
+        // Check if the user was deleted
+        if ($deleteUserStmt->affected_rows === 0) {
+            throw new Exception("No user found with the specified email.");
+        }
+
+        // Delete the user's transactions from the transactions table
+        $deleteTransactionsSql = "DELETE FROM `transactions` WHERE `email` = ?";
+        $deleteTransactionsStmt = $conn->prepare($deleteTransactionsSql);
+        $deleteTransactionsStmt->bind_param("s", $email);
+        $deleteTransactionsStmt->execute();
+
+        // Commit the transaction
+        $conn->commit();
+
+        return true;
+
+    } catch (Exception $e) {
+    
+       
+        $conn->rollback();
+
+        return false;
+    } finally {
+        // Check if the statements are set before attempting to close them
+        if (isset($deleteUserStmt)) {
+            $deleteUserStmt->close();
+        }
+        if (isset($deleteTransactionsStmt)) {
+            $deleteTransactionsStmt->close();
+        }
+    }
+}
+
+
+
+if (isset($_POST['deleteUser'])) {
+    $email = $_POST['email'];
+
+    if (empty($email)) {
+        redirectWithMessage('../dashboard.php', 'Please select a user', 'err');
+        exit();
+    }
+
+    $result = deleteUserAndTransactions($conn, $email);
+
+    if ($result) {
+        redirectWithMessage('../dashboard.php', 'User deleted successfully', 'suc');
+    } else {
+        redirectWithMessage('../dashboard.php', 'Failed to delete user', 'err');
+    }
+}
+
+
+
 
 
 
@@ -180,14 +270,23 @@ if (isset($_POST['userProfit'])) {
     $amount = floatval($_POST['amount']);
     $email = $_POST['email'];
 
+    echo($email);
+    echo("<br>");
+
     $details = getDetailsByEmail("users", $conn, $email);
 
     var_dump($details);
+    echo("<br>");
+
+   
   
     
     $profit = floatval($details["profit"]) + $amount;
     
     $id = $details['id'];
+
+    echo($id);
+    die();
     
     
 

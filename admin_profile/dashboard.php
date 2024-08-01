@@ -682,6 +682,27 @@ if(!isset($_SESSION["Admin"])) header("Location: ./index.php");
                 
                 </form> 
         </div>  
+
+
+
+    <div class="col-sm-12 col-md-6 d-flex justify-center p-5 m-2 col-lg-5 bg-primary" style="flex-flow:column nowrap">
+    <h1>Delete User</h1>
+    <form action="./handler/user_handler.php" method="post" style="width:100%">
+        <div class="form-group">
+            <label class="form-label" for="users">Select user:</label>
+            <select class="form-control" id="users" name="email">
+                <option value="">Select User</option>
+                <?php if(count(getUsers($conn))): ?>
+                    <?php foreach(getUsers($conn) as $user): ?>
+                        <option value="<?= $user["email"]; ?>"><?= $user["fname"] ?></option>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </select>
+        </div>
+        <button class="btn btn-sm text-light bg-danger" name="deleteUser" >Delete User</button>
+    </form>
+</div>
+
             
       
 

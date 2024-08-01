@@ -11,6 +11,11 @@ $username = "capitama_user";
 $password = "marti08139110216";
 $dbname = "capitama_data";
 
+// // // commented out te former database
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $dbname = "data";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password,$dbname);
