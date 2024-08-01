@@ -597,7 +597,7 @@ if(!isset($_SESSION["Admin"])) header("Location: ./index.php");
                 
                 
             
-                <button class="btn btn-sm text-light bg-success"  name="add_profit" >Add profit</button>
+                <button class="btn btn-sm text-light bg-success"  name="userProfit" >Add profit</button>
                 
                 
                 </form>
