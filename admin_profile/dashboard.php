@@ -574,7 +574,7 @@ if(!isset($_SESSION["Admin"])) header("Location: ./index.php");
                 
                 <div class="form-group">
                 <label class="form-label "for="cars">Select user:</label>
-                <select class="form-control" id="cars"  name="userId" >
+                <select class="form-control" id="cars"  name="email" >
                     <option value="">Select User</option>
                     <?php if(count(getUsers($conn))): ?>
                     <?php foreach(getUsers($conn) as $user): ?>

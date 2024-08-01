@@ -198,9 +198,12 @@ if (isset($_POST['depositUser'])) {
 // Add profit
 if (isset($_POST['add_profit'])) {
     $amount = floatval($_POST['amount']);
-    $email = $_POST['userId'];
+    $email = $_POST['email'];
 
     $details = getDetailsByEmail("users", $conn, $email);
+
+    var_dump($details);
+    die();
     
     $profit = floatval($details["profit"]) + $amount;
     
