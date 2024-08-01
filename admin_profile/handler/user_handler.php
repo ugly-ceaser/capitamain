@@ -61,6 +61,7 @@ if (isset($_POST['update'])) {
     }
 }
 
+// this is annoying
 
 // Approve request
 if (isset($_GET["approve"])) {
