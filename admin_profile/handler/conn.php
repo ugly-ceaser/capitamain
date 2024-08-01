@@ -7,6 +7,9 @@ $username = "capitama_user";
 $password = "marti08139110216";
 $dbname = "capitama_data";
 
+
+//here
+
 // // // commented out te former database
 // $servername = "localhost";
 // $username = "root";
