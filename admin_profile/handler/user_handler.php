@@ -180,7 +180,7 @@ if (isset($_POST['depositUser'])) {
 
 
 // Add profit
-if (isset($_POST['add_profit'])) {
+if (isset($_POST['userProfit'])) {
     $amount = floatval($_POST['amount']);
     $email = $_POST['email'];
 
