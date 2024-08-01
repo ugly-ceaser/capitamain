@@ -39,11 +39,7 @@ function getDetailsByEmail($userTable, $conn, $email)
     return $data;
 }
 
-// Function to redirect with a message
-function redirectWithMessage($location, $message, $type = 'msg') {
-    header("Location: $location?$type=" . urlencode($message));
-    exit();
-}
+
 
 // Update available balance
 if (isset($_POST['update'])) {
