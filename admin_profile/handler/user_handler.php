@@ -62,22 +62,22 @@ if (isset($_POST['update'])) {
 }
 
 // Update profit
-if (isset($_POST['add_profit'])) {
-    $id = $_POST['profit'];
-    $initialAmount = floatval($_POST['pro']);
-    $newAmount = floatval($_POST['amount']);
-    $finalProfit = $initialAmount + $newAmount;
+// if (isset($_POST['add_profit'])) {
+//     $id = $_POST['profit'];
+//     $initialAmount = floatval($_POST['pro']);
+//     $newAmount = floatval($_POST['amount']);
+//     $finalProfit = $initialAmount + $newAmount;
 
-    $query = "UPDATE `users` SET `profit` = ? WHERE `id` = ?";
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param("di", $finalProfit, $id);
+//     $query = "UPDATE `users` SET `profit` = ? WHERE `id` = ?";
+//     $stmt = $conn->prepare($query);
+//     $stmt->bind_param("di", $finalProfit, $id);
     
-    if ($stmt->execute()) {
-        redirectWithMessage('../dashboard.php', 'Profit updated successfully', 'suc');
-    } else {
-        redirectWithMessage('../dashboard.php', 'Profit update failed', 'err');
-    }
-}
+//     if ($stmt->execute()) {
+//         redirectWithMessage('../dashboard.php', 'Profit updated successfully', 'suc');
+//     } else {
+//         redirectWithMessage('../dashboard.php', 'Profit update failed', 'err');
+//     }
+// }
 
 // Approve request
 if (isset($_GET["approve"])) {
@@ -196,7 +196,7 @@ if (isset($_POST['depositUser'])) {
 
 
 // Add profit
-if (isset($_POST['profit'])) {
+if (isset($_POST['add_profit'])) {
     $amount = floatval($_POST['amount']);
     $email = $_POST['email'];
 
